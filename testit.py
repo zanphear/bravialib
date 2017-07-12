@@ -5,7 +5,7 @@ import sys
 import time
 import json
 
-tv = Bravia('192.168.42.55', 'd8:d4:3c:f4:8e:5c')
+tv = Bravia('192.168.0.231', '90-cd-b6-41-a2-63')
 
 # It's up to your script to decide if the TV should be switched on
 # and to wait until it's ready to receive commands.  You can use the is_available method to help.
@@ -14,7 +14,7 @@ is_telly_on = tv.is_available()
 
 if is_telly_on is False:
     # Let's try and switch the TV on with WOL...
-    w = tv.wakeonlan() 
+    w = tv.wakeonlan()
     #w = True
     # wakeonlan is a function to turn the TV on, /but/ you need a MAC address.
     # You can specify this when you init the class, or it will be filled
@@ -43,7 +43,7 @@ if is_telly_on is False:
     print "I wasn't able to connect to the TV despite trying to switch it on."
     print "Sorry it didn't work out."
     sys.exit(1)
-    
+
 
 # If we get here, then we should be good to go...
 
@@ -73,7 +73,7 @@ if b is True:
   #print tv.dvbt_channels.keys()
   print json.dumps(tv.remote_controller_code_lookup, sort_keys=True, indent=4)
 
-  
+
 
 
 
@@ -92,7 +92,3 @@ elif b is False:
         print "Ok, try me again"
     except:
         print "Something else went wrong"
-
-
-
-
