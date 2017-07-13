@@ -5,7 +5,7 @@ import sys
 import time
 import json
 
-tv = Bravia('192.168.0.231', '90-cd-b6-41-a2-63')
+tv = Bravia('192.168.0.231', '90:cd:b6:41:a2:63')
 
 # It's up to your script to decide if the TV should be switched on
 # and to wait until it's ready to receive commands.  You can use the is_available method to help.
